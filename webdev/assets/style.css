@@ -151,12 +151,17 @@ img {
   font-weight: 400;
 }
 
-.info-mid {
+.info-mid, .info-second {
   display: flex;
   margin-top: 28vh;
   justify-content: space-between;
   align-items: center;
   padding: 1vh 6vw;
+}
+
+.info-second {
+  margin-top: 0;
+  margin-bottom: 2vh;
 }
 
 .left-side {
@@ -165,6 +170,11 @@ img {
 
 .left-side p {
   line-height: 1.8;
+}
+
+.right-side p {
+  line-height: 1.8;
+  text-align: end;
 }
 
 .left-side h2 {
@@ -322,6 +332,16 @@ footer nav ul {
   display: block;
 }
 
+footer nav li {
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+footer nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .left {
   flex-basis: 25%;
   padding: 20px;
@@ -337,19 +357,116 @@ footer nav ul {
   padding: 20px;
 }
 
-
-
-nav li {
-  margin-top: 15px;
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .right iframe {
   width: 100%;
   border-radius: 10px;
+}
+
+
+
+@media (max-width: 1201px) {
+  .info-mid {
+    margin-top: 12vh;
+  }
+  
+  .contact-text h2 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 769px) {
+  .info-mid {
+    margin-top: 18vh;
+  }
+
+  .left-side h2 {
+    font-size: 2rem;
+  }
+
+  .left-side p {
+    line-height: 1.4;
+  }
+
+  .contact-text h2 {
+    font-size: 4rem;
+  }
+
+  .post {
+    height: 34vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-mid {
+    margin-top: 23vh;
+  }
+
+  .opt-item {
+    height: 28vh;
+  }
+
+  .left-side h2 {
+    font-size: 2rem;
+  }
+
+  .left-side p {
+    line-height: 1.4;
+    font-size: 0.8rem;
+  }
+
+  .contact-text h2 {
+    font-size: 3rem;
+  }
+
+  .post {
+    height: 32vh;
+  }
+
+  .post h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 468px) {
+  .mid-opt {
+    display: none;
+  }
+
+  .info-mid {
+    margin-top: 0;
+  }
+
+  .right-side {
+    display: none;
+  }
+
+  .left-side {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left-side p {
+    font-size: 0.9rem;
+  }
+
+  .left-side .menu-button {
+    padding: 10px 100px;
+  }
+
+  .contact-text h2{
+    font-size: 1.8rem;
+  }
+
+  .contact-text p {
+    font-size: 0.8rem;
+  }
+
+  .post {
+    width: 40vw;
+  }
+
+  .right iframe {
+    display: none;
+  }
+  
 }
