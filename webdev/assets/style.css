@@ -355,6 +355,10 @@ footer nav a {
   padding: 20px;
 }
 
+.left p {
+  line-height: 2.0;
+}
+
 .right {
   flex-basis: 55%;
   padding: 20px;
