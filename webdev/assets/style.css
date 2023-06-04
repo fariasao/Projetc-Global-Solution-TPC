@@ -136,6 +136,14 @@ img {
   margin: 3vh 3vw;
 }
 
+.mid-first {
+  margin-left: 7%;
+}
+
+.mid-opt:last-child {
+  margin-right: 7%;
+}
+
 .opt-item {
   border-radius: 4px;
   background-color: var(--color-white);
@@ -274,6 +282,12 @@ img {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.contact-form button:hover {
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-aqua);
 }
 
 .galeria {
