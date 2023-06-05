@@ -185,6 +185,7 @@ img {
 
 .left-side {
   width: 50%;
+  text-align: justify;
 }
 
 .left-side p {
@@ -209,9 +210,11 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: justify;
 }
 
-.right-side img {
+.right-side img,
+.left-side img {
   width: 40vw;
   height: 40vh;
   border-radius: 10px;
@@ -372,6 +375,10 @@ footer nav a {
 .left {
   flex-basis: 25%;
   padding: 20px;
+}
+
+.left h2 {
+  text-align: center;
 }
 
 .left p {
