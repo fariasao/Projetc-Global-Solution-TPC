@@ -487,6 +487,23 @@ footer nav a {
   }
 }
 
+/** Scrollbar **/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-green);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-aqua-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-aqua);
+}
+
 @media (max-width: 768px) {
   .info-mid {
     margin-top: 23vh;
