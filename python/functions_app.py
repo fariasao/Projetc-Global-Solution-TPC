@@ -47,8 +47,61 @@ produtores = [
 
 
 ]
-empresas = []
-servicos = []
+empresas = [
+    {
+    "codigoEmpresa": 1,
+    "nome": "HealthTech",
+    "tipo": "Pessoa Juridica",
+    "areaPlantio": "N/Possui",
+    "nomeFantasia": "HealthTech Solutions",
+    "email": "contato@healthtech.com.br",
+    "telefone": "11 88888-8888"
+    },
+    {
+    "codigoEmpresa": 2,
+    "nome": "EcoTech",
+    "tipo": "Pessoa Juridica",
+    "areaPlantio": "N/Possui",
+    "nomeFantasia": "EcoTech Innovations",
+    "email": "contato@ecotech.com.br",
+    "telefone": "11 77777-7777"
+    },
+    {
+    "codigoEmpresa": 3,
+    "nome": "FinTech",
+    "tipo": "Pessoa Juridica",
+    "areaPlantio": "N/Possui",
+    "nomeFantasia": "FinTech Global",
+    "email": "contato@fintech.com.br",
+    "telefone": "11 66666-6666"
+    },
+    {
+    "codigoEmpresa": 4,
+    "nome": "AutoTech",
+    "tipo": "Pessoa Juridica",
+    "areaPlantio": "N/Possui",
+    "nomeFantasia": "AutoTech Motors",
+    "email": "contato@autotech.com.br",
+    "telefone": "11 55555-5555"
+    },
+    {
+    "codigoEmpresa": 5,
+    "nome": "CleanTech",
+    "tipo": "Pessoa Juridica",
+    "areaPlantio": "N/Possui",
+    "nomeFantasia": "CleanTech Industries",
+    "email": "contato@cleantech.com.br",
+    "telefone": "11 44444-4444"
+    }
+
+]
+servicos = [
+    {
+    "codigoEmpresa": 1,
+    "nome": "HealthTech",
+    "descricao": "A HealthTech é uma empresa de tecnologia que desenvolve soluções para o setor de saúde de plantas",
+    }
+]
 instituicoes = []
 projetos = []
 
@@ -96,9 +149,14 @@ def buscar_produtor_por_id(id):
             print("=======================================================")
             print()
             return produtor
-    
     return None
 
+def remover_produtor(codigoProdutor):
+    for i in range(len(produtores)):
+        if produtores[i]['codigoProdutor'] == codigoProdutor:
+            produtores.pop(i)
+            return True
+    return False
 
 def cadastrar_empresa():
     nome = input("Digite o nome da empresa: ")
@@ -131,18 +189,18 @@ def cadastrar_empresa():
         descricao = input("Digite a descricao do serviço: ")
     
         # cria um dicionário com as informações do produto e adiciona na lista
-        servicos.append({'Nome': servico, 'Descrição': descricao})
+        servicos.append({'codigoEmpresa': codigoEmpresa, 'Nome': servico, 'Descrição': descricao})
     
     # exibe a lista de produtos cadastrados
     print("\nServiços cadastrados:")
     for servico in servicos:
         print(servico)
 
-def visualizar_empresa():
-    for servico in servicos:
+def visualizar_empresas():
+    for empresa in empresas:
         print("=======================================================")
-        print("ID:", servico["codigoEmpresa"], "Serviço:", servico["nome"])
-        print()
+        print("ID:", empresa["codigoEmpresa"], "Serviço:", empresa["nome"])
+        print("=======================================================")
 
 
 def cadastrar_instituicao():
@@ -229,3 +287,11 @@ def consultar_perfil(codigo):
             print("Telefone: ", produtor["telefone"])
             return
     print("Produtor não encontrado")
+
+def editar_produtor(codigo, atributo, alteracao):
+    for produtor in produtores:
+        if produtor['codigoProdutor'] == codigo:
+            produtor[atributo] = alteracao
+            print(f"{atributo} do produtor ID: {codigo} foi atualizado para {alteracao}.")
+            return
+    print(f"Não foi encontrado nenhum produtor com o ID {codigo}.")

@@ -22,6 +22,17 @@ if login_dados == '1':
 
     mostrar_menu()
 
+    op = input("Selecione uma Opção: ")
+    if op == "1":
+        consultar_perfil(ID)
+
+    elif op == "2":
+        visualizar_produtores()
+
+    elif op == "3":
+        print()
+    else:
+        print("Opção inválida!")
 
 
 
