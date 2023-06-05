@@ -188,6 +188,10 @@ img {
   text-align: justify;
 }
 
+.left-side h2 {
+  text-align: left;
+}
+
 .left-side p {
   line-height: 1.8;
 }
