@@ -12,6 +12,10 @@
   --color-light-blue: #45dbf8;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -41,6 +45,7 @@ header {
   color: var(--color-white);
   font-size: 24px;
   font-weight: bold;
+  padding-left: 10%;
 }
 
 nav ul {
@@ -73,7 +78,7 @@ img {
   background-color: var(--color-aqua);
   border: none;
   border-radius: 4px;
-  padding: 10px 45px;
+  padding: 10px 25px;
   color: var(--color-white);
   cursor: pointer;
   font-size: 16px;
@@ -86,7 +91,7 @@ img {
 }
 
 .li-menu {
-  margin: auto 1.3vw;
+  margin: auto 1vw;
 }
 
 .full-banner {
@@ -131,6 +136,14 @@ img {
   margin: 3vh 3vw;
 }
 
+.mid-first {
+  margin-left: 7%;
+}
+
+.mid-opt:last-child {
+  margin-right: 7%;
+}
+
 .opt-item {
   border-radius: 4px;
   background-color: var(--color-white);
@@ -172,6 +185,7 @@ img {
 
 .left-side {
   width: 50%;
+  text-align: justify;
 }
 
 .left-side p {
@@ -196,9 +210,11 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: justify;
 }
 
-.right-side img {
+.right-side img,
+.left-side img {
   width: 40vw;
   height: 40vh;
   border-radius: 10px;
@@ -269,6 +285,12 @@ img {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.contact-form button:hover {
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-aqua);
 }
 
 .galeria {
@@ -353,6 +375,10 @@ footer nav a {
 .left {
   flex-basis: 25%;
   padding: 20px;
+}
+
+.left h2 {
+  text-align: center;
 }
 
 .left p {
@@ -459,6 +485,23 @@ footer nav a {
   .post {
     height: 34vh;
   }
+}
+
+/** Scrollbar **/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-green);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-aqua-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-aqua);
 }
 
 @media (max-width: 768px) {
