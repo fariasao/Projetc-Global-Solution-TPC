@@ -217,7 +217,7 @@ img {
 
 .right-side p {
   line-height: 1.8;
-  text-align: end;
+  text-align: justify;
 }
 
 .left-side h2 {
@@ -233,16 +233,19 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: justify;
 }
 
 .right-side img,
 .left-side img {
-  width: 40vw;
+  width: 42vw;
   height: 40vh;
   border-radius: 10px;
   object-fit: cover;
   border-radius: 4px;
+}
+
+.right-side img {
+  margin-left: 2vw;
 }
 
 .contact {
@@ -369,6 +372,7 @@ footer {
   display: flex;
   background-color: #333;
   color: var(--color-white);
+  margin-top: 5vh;
 }
 
 footer h2{
