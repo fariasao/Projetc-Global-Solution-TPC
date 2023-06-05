@@ -81,13 +81,32 @@ img {
   padding: 10px 25px;
   color: var(--color-white);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .menu-button:hover {
   background-color: var(--color-white);
   color: var(--color-aqua);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  color: var(--color-white);
+  background-color: var(--color-aqua);
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.menu-icon {
+  vertical-align: middle;
+  font-size: 1.3rem;
 }
 
 .li-menu {
@@ -250,7 +269,7 @@ img {
 }
 
 .contact-text p {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.5;
   margin-bottom: 30px;
 }
@@ -262,7 +281,7 @@ img {
 
 .contact-form label {
   display: block;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 5px;
   color: var(--color-white);
 }
@@ -281,7 +300,7 @@ img {
   width: 100%;
   max-width: 300px;
   height: 50px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   border: 1px solid var(--color-clean-grey);
   color: var(--color-white);
@@ -450,11 +469,28 @@ footer nav a {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .input-confirm:hover {
   background-color: var(--color-dark-green);
+}
+
+/** Scrollbar **/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-green);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-aqua-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-aqua);
 }
 
 /** Media Queries **/
@@ -491,24 +527,35 @@ footer nav a {
   }
 }
 
-/** Scrollbar **/
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-dark-green);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-aqua-green);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-aqua);
-}
-
 @media (max-width: 768px) {
+  .menu-items {
+    position: absolute;
+    top: 0;
+    left: -60%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 50vw;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-dark-green);
+    box-shadow: 1px 0px 3px black;
+    transition: 0.3s;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .open {
+    left: 0%;
+  }
+
+  .li-menu {
+    margin: 1vh 1vw;
+    line-height: 3;
+  }
+  
   .info-mid {
     margin-top: 23vh;
   }
@@ -519,6 +566,7 @@ footer nav a {
 
   .left-side h2 {
     font-size: 2rem;
+    text-align: center;
   }
 
   .left-side p {
