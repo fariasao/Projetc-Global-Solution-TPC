@@ -132,7 +132,7 @@ img {
   text-align: center;
   transition: all 0.3s ease-in-out;
   position: absolute;
-  right: 10vw;
+  right: 8.5vw;
 }
 
 .drop-menu .li-menu {
@@ -201,7 +201,7 @@ img {
   border-radius: 4px;
   background-color: var(--color-white);
   width: 20vw;
-  height: 25vh;
+  height: auto;
   padding: 1.2vw;
   text-align: center;
 }
@@ -366,7 +366,7 @@ img {
   text-align: center;
   border: 1px solid transparent;
   border-radius: 15px;
-  height: 40vh;
+  height: auto;
   background-color: var(--color-aqua);
 }
 
@@ -541,6 +541,14 @@ footer nav a {
 }
 
 /** Media Queries **/
+
+@media (max-width: 1366px) {
+  .info-mid {
+    margin-top: 35vh;
+  }
+
+
+}
 
 @media (max-width: 1201px) {  
   .info-mid {
@@ -784,14 +792,18 @@ footer nav a {
   }  
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1367px) {
+  .info-mid {
+    margin-top: 30vh;
+  }
+
+  .drop-menu {
+    right: 8.5vh;
+  }
+
   .menu-items, 
   .menu-button {
     font-size: 1.2rem;
-  }
-
-  .opt-item {
-    height: 30vh;
   }
 
   .opt-item h3 {
@@ -820,3 +832,4 @@ footer nav a {
     font-size: 1rem;
   }
 }
+
