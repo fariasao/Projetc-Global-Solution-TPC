@@ -4,6 +4,7 @@
   --color-white: #fff;
   --color-aqua: #009590;
   --color-dark-green: #0a2d29;
+  --color-darker-green: #09201d;
   --color-clean-grey: #efefef;
   --color-light-grey: #f4f6f8;
 
@@ -111,7 +112,39 @@ img {
 }
 
 .li-menu {
-  margin: auto 1vw;
+  margin: auto 2vw;
+  padding: 10px 0;
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-items .li-menu:hover .drop-menu {
+  display: block;
+  margin-top: 10px;
+  line-height: 1.6;
+  background-color: var(--color-dark-green);
+  width: auto;
+  height: auto;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  right: 10vw;
+}
+
+.drop-menu .li-menu {
+  display: block;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.drop-menu .li-menu:hover {
+  background-color: var(--color-aqua);
+  transition: all 0.3s ease-in-out;
 }
 
 .full-banner {
@@ -140,6 +173,7 @@ img {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin-bottom: 10px;
   text-transform: uppercase;
+  margin-top: 5vh;
 }
 
 .text-banner h2 {
@@ -168,15 +202,16 @@ img {
   border-radius: 4px;
   background-color: var(--color-white);
   width: 20vw;
-  height: 25vh;
+  height: auto;
   padding: 1.2vw;
   text-align: center;
+  transition: all 0.5s ease-in-out;
 }
 
 .opt-item:hover {
   background-color: var(--color-dark-green);
   color: var(--color-white);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .opt-item img {
@@ -333,7 +368,7 @@ img {
   text-align: center;
   border: 1px solid transparent;
   border-radius: 15px;
-  height: 40vh;
+  height: auto;
   background-color: var(--color-aqua);
 }
 
@@ -509,6 +544,14 @@ footer nav a {
 
 /** Media Queries **/
 
+@media (max-width: 1366px) {
+  .info-mid {
+    margin-top: 35vh;
+  }
+
+
+}
+
 @media (max-width: 1201px) {  
   .info-mid {
     margin-top: 12vh;
@@ -520,6 +563,10 @@ footer nav a {
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 769px) {
+  .menu-items .li-menu:hover .drop-menu{
+    right: 12vw;
+  }
+
   .info-mid {
     margin-top: 22vh;
   }
@@ -577,8 +624,7 @@ footer nav a {
     font-size: 1.2rem;
     text-align: center;
     background-color: var(--color-dark-green);
-    box-shadow: 1px 0px 3px black;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   .mobile-menu {
@@ -605,9 +651,17 @@ footer nav a {
     line-height: 4;
   }
   
-  .li-menu:hover {
-    background-color: var(--color-aqua-green);
+  .li-menu:hover .drop-menu {
     transition: all 0.3s ease-in-out;
+  }
+
+  .menu-items .li-menu:hover .drop-menu {
+    position: relative;
+    width: auto;
+    border: none;
+    border-radius: 0;
+    background-color: var(--color-darker-green);
+    right: 0;
   }
 
   .info-mid {
@@ -740,14 +794,18 @@ footer nav a {
   }  
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1367px) {
+  .info-mid {
+    margin-top: 30vh;
+  }
+
+  .drop-menu {
+    right: 8.5vh;
+  }
+
   .menu-items, 
   .menu-button {
     font-size: 1.2rem;
-  }
-
-  .opt-item {
-    height: 30vh;
   }
 
   .opt-item h3 {
@@ -776,3 +834,4 @@ footer nav a {
     font-size: 1rem;
   }
 }
+
