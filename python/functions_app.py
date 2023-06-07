@@ -89,15 +89,13 @@ def cadastrar_empresa():
         
             descricao = input("Digite a descricao do serviço: ")
     
-            # cria um dicionário com as informações do produto e adiciona   na lista
-            servicos.append({'codigoEmpresa': codigoEmpresa, 'Nome':    servico, 'Descrição': descricao})
+            
+            servicos.append({'codigoEmpresa': codigoEmpresa, 'Nome':servico, 'Descrição': descricao})
     # exibe a lista de produtos cadastrados
     #print("\nServiços cadastrados:")
     #for servico in servicos:
         #print(servico)
-    else:
-        cadastrar()
-    
+     
 
     
 
@@ -115,7 +113,6 @@ def buscar_empresa_por_id(id):
             print("=======================================================")
             print("Nome:", empresa["nome"])
             print("Tipo:", empresa["tipo"])
-            print("Area Plantio:", empresa["areaPlantio"])
             print("Nome Fantasia:", empresa["nomeFantasia"])
             print("Email:", empresa["email"])
             print("Telefone:", empresa["telefone"])
@@ -129,8 +126,8 @@ def buscar_empresa_por_id(id):
                 visualizar_servicos(id)
             return empresa
         
-        print("Nenhuma empresa encontrada!")
-        return None
+    print("Nenhuma empresa encontrada!")
+    return None
     
 
 def visualizar_servicos(id):
@@ -175,7 +172,7 @@ def cadastrar_instituicao():
         
         descricao = input("Digite a descricao do projeto: ")
     
-        # cria um dicionário com as informações do produto e adiciona na lista
+        
         projetos.append({'Nome': projeto, 'Descrição': descricao})
     
     # exibe a lista de produtos cadastrados
@@ -268,4 +265,8 @@ def cadastrar():
     users.append(novo_usuario)
     
     print("Olá ", usuario,", você se cadastrou com sucesso!")
+    print("Agora você pode fazer login no sistema!")
+    print("======================================")
+    print("             LOGIN")
+    print("======================================")
     
