@@ -1,109 +1,4 @@
-produtores = [
-    {
-    "codigoProdutor": 1,
-    "nome": "Agrotech",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": 1000,
-    "nomeFantasia": "Agrotech Enterprise",
-    "email": "contato@agrotech.com.br",
-    "telefone": "11 99999-9999"
-    },
-    {
-    "codigoProdutor": 2,
-    "nome": "Fazenda Feliz",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": 500,
-    "nomeFantasia": "Fazenda Feliz",
-    "email": "contato@fazendafeliz.com.br",
-    "telefone": "21 88888-8888"
-    },
-    {
-    "codigoProdutor": 3,
-    "nome": "Sítio Sol Nascente",
-    "tipo": "Pessoa Física",
-    "areaPlantio": 150,
-    "nomeFantasia": "",
-    "email": "contato@sitionsolnascente.com.br",
-    "telefone": "31 33333-3333"
-    },
-    {
-    "codigoProdutor": 4,
-    "nome": "Fazenda São João",
-    "tipo": "Pessoa Jurídica",
-    "areaPlantio": 800,
-    "nomeFantasia": "São João",
-    "email": "contato@fazendasaonjoao.com.br",
-    "telefone": "81 44444-4444"
-    },
-    {
-    "codigoProdutor": 5,
-    "nome": "Agricultura Orgânica Ltda.",
-    "tipo": "Pessoa Jurídica",
-    "areaPlantio": 300,
-    "nomeFantasia": "Orgânica",
-    "email": "contato@agriculturaorganica.com.br",
-    "telefone": "21 55555-5555"
-    }
-
-
-]
-empresas = [
-    {
-    "codigoEmpresa": 1,
-    "nome": "HealthTech",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": "N/Possui",
-    "nomeFantasia": "HealthTech Solutions",
-    "email": "contato@healthtech.com.br",
-    "telefone": "11 88888-8888"
-    },
-    {
-    "codigoEmpresa": 2,
-    "nome": "EcoTech",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": "N/Possui",
-    "nomeFantasia": "EcoTech Innovations",
-    "email": "contato@ecotech.com.br",
-    "telefone": "11 77777-7777"
-    },
-    {
-    "codigoEmpresa": 3,
-    "nome": "FinTech",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": "N/Possui",
-    "nomeFantasia": "FinTech Global",
-    "email": "contato@fintech.com.br",
-    "telefone": "11 66666-6666"
-    },
-    {
-    "codigoEmpresa": 4,
-    "nome": "AutoTech",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": "N/Possui",
-    "nomeFantasia": "AutoTech Motors",
-    "email": "contato@autotech.com.br",
-    "telefone": "11 55555-5555"
-    },
-    {
-    "codigoEmpresa": 5,
-    "nome": "CleanTech",
-    "tipo": "Pessoa Juridica",
-    "areaPlantio": "N/Possui",
-    "nomeFantasia": "CleanTech Industries",
-    "email": "contato@cleantech.com.br",
-    "telefone": "11 44444-4444"
-    }
-
-]
-servicos = [
-    {
-    "codigoEmpresa": 1,
-    "nome": "HealthTech",
-    "descricao": "A HealthTech é uma empresa de tecnologia que desenvolve soluções para o setor de saúde de plantas",
-    }
-]
-instituicoes = []
-projetos = []
+from arrays import produtores, empresas, servicos, instituicoes, projetos, users
 
 def cadastrar_produtor():
     nome = input("Digite o nome do Produtor: ")
@@ -149,7 +44,9 @@ def buscar_produtor_por_id(id):
             print("=======================================================")
             print()
             return produtor
+    print("Produtor não encontrado.")
     return None
+    
 
 def remover_produtor(codigoProdutor):
     for i in range(len(produtores)):
@@ -180,28 +77,72 @@ def cadastrar_empresa():
     }
     empresas.append(empresa)
 
-    while True:
-        servico = input("Digite o nome do produto (ou 'sair' para encerrar): ")
+    print("Empresa cadastrada com sucesso!")
+    i = input("Você gostaria de cadastrar um serviço? \nDigite 1 para sim \nDigite 2 para não.")
 
-        if servico.lower() == 'sair': # verifica se o usuário digitou 'sair'
-            break # encerra o loop
+    if i == '1':
+        while True:
+            servico = input("Digite o nome do Serviço (ou 'sair' para encerrar): ")
+
+            if servico.lower() == 'sair': 
+                break # encerra o loop
         
-        descricao = input("Digite a descricao do serviço: ")
+            descricao = input("Digite a descricao do serviço: ")
     
-        # cria um dicionário com as informações do produto e adiciona na lista
-        servicos.append({'codigoEmpresa': codigoEmpresa, 'Nome': servico, 'Descrição': descricao})
-    
+            # cria um dicionário com as informações do produto e adiciona   na lista
+            servicos.append({'codigoEmpresa': codigoEmpresa, 'Nome':    servico, 'Descrição': descricao})
     # exibe a lista de produtos cadastrados
-    print("\nServiços cadastrados:")
-    for servico in servicos:
-        print(servico)
+    #print("\nServiços cadastrados:")
+    #for servico in servicos:
+        #print(servico)
+    else:
+        cadastrar()
+    
+
+    
 
 def visualizar_empresas():
     for empresa in empresas:
         print("=======================================================")
-        print("ID:", empresa["codigoEmpresa"], "Serviço:", empresa["nome"])
+        print("ID:", empresa["codigoEmpresa"], "Empresa:", empresa["nome"])
         print("=======================================================")
 
+def buscar_empresa_por_id(id):
+    for empresa in empresas:
+        if empresa["codigoEmpresa"] == id:
+            print("=======================================================")
+            print("                   Resultado da busca:")
+            print("=======================================================")
+            print("Nome:", empresa["nome"])
+            print("Tipo:", empresa["tipo"])
+            print("Area Plantio:", empresa["areaPlantio"])
+            print("Nome Fantasia:", empresa["nomeFantasia"])
+            print("Email:", empresa["email"])
+            print("Telefone:", empresa["telefone"])
+            print("=======================================================")
+            print()
+            i = input("Deseja ver a lista de servicos desta empresa? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
+            if i == "1":
+                print("=======================================================")
+                print("                        SERVICOS:")
+                print("=======================================================")
+                visualizar_servicos(id)
+            return empresa
+        
+        print("Nenhuma empresa encontrada!")
+        return None
+    
+
+def visualizar_servicos(id):
+    for servico in servicos:
+        if servico["codigoEmpresa"] == id:
+            print("=======================================================")
+            print("Nome:", servico["nome"], "\nDescrição:", servico["descricao"])
+            print("=======================================================")
+            return servico
+        
+        print("Nenhum servico encontrado!")
+        return None
 
 def cadastrar_instituicao():
     nome = input("Digite o nome da instituicao: ")
@@ -214,7 +155,7 @@ def cadastrar_instituicao():
     codigoinstituicao = len(instituicoes) + 1 # Gera um código automático baseado na posição no array
 
     instituicao = {
-        "codigoinstituicao": codigoinstituicao,
+        "codigoInstituicao": codigoinstituicao,
         "nome": nome,
         "tipo": tipo,
         "nomeFantasia": nomeFantasia,
@@ -246,22 +187,44 @@ def cadastrar_instituicao():
 def visualizar_instituicao():
     for instituicao in instituicoes:
         print("=======================================================")
-        print("ID:", instituicao["codigoinstituicao"], "Nome:", instituicao["nome"])
-        print()
+        print("ID:", instituicao["codigoInstituicao"], "Nome:", instituicao["nome"])
+        print("=======================================================")
+
+def visualizar_projetos():
+    print("=======================================================")
+    print("                        PROJETOS:")
+    print("=======================================================")
+    for projeto in projetos:
+        print("=======================================================")
+        print("ID:", projeto["codigoProjeto"], "Nome:", projeto["nome"])
+        print("=======================================================")
+    i = input("Deseja ver mais informacoes sobre algum projeto? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
+    if i == "1":
+        id = int(input("Digite o ID do projeto: "))
+        visualizar_projetos_id(id)
 
 
-def login(usuario, senha, modalidade):
-    users = [
-        {'usuario': 'agrotech', 'senha': '123', 'tipo': 'PR'},
-        {'usuario': 'produtor', 'senha': '123', 'tipo': 'ER'},
-        {'usuario': 'instituicao', 'senha': '123', 'tipo': 'IP'}
-    ]
+
+def visualizar_projetos_id(id):
+    for projeto in projetos:
+        if projeto["codigoProjeto"] == id:
+            print("=======================================================")
+            print("Nome:", projeto["nome"], "\nDescrição:", projeto["descricao"], "\ninstituicao:", projeto["Instituicao"])
+            print("=======================================================")
+            return projeto
+    print("Nenhum servico encontrado!")
+    return None
     
+def login(usuario, senha, modalidade):
+       
     for user in users:
         if user['usuario'] == usuario and user['senha'] == senha and user['tipo'] == modalidade:
             if modalidade == 'PR':
                 # Rotina de administrador
+                print("======================================")
                 print('Bem-vindo, Logado como Produtor Rural!')
+                print("======================================")
+                print()
                 return True
             elif modalidade == 'ER':
                 # Rotina do usuário
@@ -295,3 +258,14 @@ def editar_produtor(codigo, atributo, alteracao):
             print(f"{atributo} do produtor ID: {codigo} foi atualizado para {alteracao}.")
             return
     print(f"Não foi encontrado nenhum produtor com o ID {codigo}.")
+
+def cadastrar():
+    usuario = input("Digite o nome do usuário: ")
+    senha = input("Digite a senha do usuário: ")
+    tipo = "PR"
+    
+    novo_usuario = {'usuario': usuario, 'senha': senha, 'tipo': tipo}
+    users.append(novo_usuario)
+    
+    print("Olá ", usuario,", você se cadastrou com sucesso!")
+    

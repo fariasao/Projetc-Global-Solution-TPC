@@ -1,4 +1,5 @@
-from functions_app import consultar_perfil, buscar_produtor_por_id, remover_produtor, visualizar_produtores, editar_produtor, visualizar_empresas
+from functions_app import consultar_perfil, buscar_produtor_por_id, remover_produtor, visualizar_produtores, editar_produtor, visualizar_empresas, buscar_empresa_por_id, visualizar_instituicao, visualizar_projetos
+
 def mostrar_menu():
     while True:
         print("Escolha uma opção:")
@@ -51,22 +52,24 @@ def mostrar_menu():
             if op_edit == "1":
                 num = int(input("Digite o ID do produtor: "))
                 buscar_produtor_por_id(num)
-                print("====================================")
-                i = input("Deseja remover ou editar o produtor? \nDigite 1 para remover \nDigite 2 para Editar \nOpcao desejada: ")
-                if i == "1":
-                    remover_produtor(num)
-                    print("Produtor removido com sucesso!")
-                elif i == "2":
-                    editar_produtor(num)
 
         elif opcao == "3":
             visualizar_empresas()
-            
+            op_edit = input("Deseja ver o perfil completo de alguma empresa? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
+            if op_edit == "1":
+                num = int(input("Digite o ID da empresa: "))
+                buscar_empresa_por_id(num)
+
+        elif opcao == "4":
+            visualizar_instituicao()
+        
+        elif opcao == "5":
+            visualizar_projetos()
+
         elif opcao == "6":
             print("Programa encerrado.")
             break
             
         else:
             print("Opção inválida. Tente novamente.\n")
-
 

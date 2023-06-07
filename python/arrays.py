@@ -138,7 +138,19 @@ projetos = [
     "nome": "Horta Comunitaria",
     "descricao": "Projeto para a construção de uma horta comunitaria",
     "Instituicao": "Instituto So o Verde Salvara"
-    }
+    },
+    {
+    "codigoProjeto": 2,
+    "nome": "Plantação Solidaria",
+    "descricao": "Projeto para financiar uma plantação solidaria para moradores da comunidade",
+    "Instituicao": "Instituto Arvores Mais Fortes"
+    },
+    {
+    "codigoProjeto": 3,
+    "nome": "Amigos da Natureza",
+    "descricao": "Projeto para revitalizar uma area de preservação ambiental de 1000 hectares",
+    "Instituicao": "Instituto Arvores Mais Fortes"
+    },
 ]
 
 users = [
