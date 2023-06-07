@@ -22,6 +22,7 @@ while True:
         login("agrotech", "123", "PR")
         ID = 1
         mostrar_menu()
+        break
 
     elif login_dados == '2':
         cadastrar()
@@ -31,6 +32,7 @@ while True:
         login(l, s, t)
         cadastrar_empresa()
         mostrar_menu()
+        break
 
     else:
         print("Opção inválida. Tente novamente.")

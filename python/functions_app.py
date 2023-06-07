@@ -90,7 +90,7 @@ def cadastrar_empresa():
             descricao = input("Digite a descricao do serviço: ")
     
             
-            servicos.append({'codigoEmpresa': codigoEmpresa, 'Nome':servico, 'Descrição': descricao})
+            servicos.append({'codigoEmpresa': codigoEmpresa, 'nome':servico, 'descricao': descricao})
     # exibe a lista de produtos cadastrados
     #print("\nServiços cadastrados:")
     #for servico in servicos:
@@ -138,8 +138,8 @@ def visualizar_servicos(id):
             print("=======================================================")
             return servico
         
-        print("Nenhum servico encontrado!")
-        return None
+    print("Nenhum servico encontrado!")
+    return None
 
 def cadastrar_instituicao():
     nome = input("Digite o nome da instituicao: ")
