@@ -53,8 +53,12 @@ def mostrar_menu():
                 if op_edit == "1":
                     num = int(input("Digite o ID do produtor: "))
                     buscar_produtor_por_id(num)
+                
+                elif op_edit == "0":
+                    break
                 else:
                     print("Opção Inválida. Tente novamente.\n")  
+                    
                     
 
         elif opcao == "3":
@@ -64,6 +68,10 @@ def mostrar_menu():
                 if op_edit == "1":
                     num = int(input("Digite o ID da empresa: "))
                     buscar_empresa_por_id(num)
+
+                elif op_edit == "0":
+                    break
+                
                 else:
                     print("Opção Inválida. Tente novamente.\n")  
                     
