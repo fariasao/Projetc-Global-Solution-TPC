@@ -48,17 +48,25 @@ def mostrar_menu():
             
         elif opcao == "2":
             visualizar_produtores()
-            op_edit = input("Deseja ver o perfil completo de algum produtor? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
-            if op_edit == "1":
-                num = int(input("Digite o ID do produtor: "))
-                buscar_produtor_por_id(num)
+            while True:
+                op_edit = input("Deseja ver o perfil completo de algum produtor? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
+                if op_edit == "1":
+                    num = int(input("Digite o ID do produtor: "))
+                    buscar_produtor_por_id(num)
+                else:
+                    print("Opção Inválida. Tente novamente.\n")  
+                    
 
         elif opcao == "3":
             visualizar_empresas()
-            op_edit = input("Deseja ver o perfil completo de alguma empresa? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
-            if op_edit == "1":
-                num = int(input("Digite o ID da empresa: "))
-                buscar_empresa_por_id(num)
+            while True:
+                op_edit = input("Deseja ver o perfil completo de alguma empresa? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
+                if op_edit == "1":
+                    num = int(input("Digite o ID da empresa: "))
+                    buscar_empresa_por_id(num)
+                else:
+                    print("Opção Inválida. Tente novamente.\n")  
+                    
 
         elif opcao == "4":
             visualizar_instituicao()

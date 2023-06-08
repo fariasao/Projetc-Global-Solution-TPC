@@ -3,14 +3,16 @@ from menu import mostrar_menu
 
 # login
 print("###########################################################################")
-print("##  ####     #####   #####     ####    ######   #####     ####    ##  ## ##")
-print("## ##  ##   ##       ##  ##   ##  ##     ##     ##       ##  ##   ##  ## ##")
-print("## ######   ## ###   #####    ##  ##     ##     ####     ##       ###### ##")
-print("## ##  ##   ##  ##   ## ##    ##  ##     ##     ##       ##  ##   ##  ## ##")
-print("## ##  ##    ####    ##  ##    ####      ##     #####     ####    ##  ## ##")
+print("         ##      ####    #####     ####    ##  ##   ######   ######")   
+print("        ####    ##  ##   ##  ##   ##  ##   ### ##   ##         ##")  
+print("       ##  ##   ##       ##  ##   ##  ##   ######   ##         ##") 
+print("       ######   ## ###   #####    ##  ##   ######   ####       ##") 
+print("       ##  ##   ##  ##   ####     ##  ##   ## ###   ##         ##") 
+print("       ##  ##   ##  ##   ## ##    ##  ##   ##  ##   ##         ##") 
+print("       ##  ##    ####    ##  ##    ####    ##  ##   ######     ##") 
 print("###########################################################################")
 
-print("Bem-vindo ao AgroTech! Escolha com qual usuário deseja logar:")
+print("Bem-vindo ao AgroNet! Escolha com qual usuário deseja logar:")
 print("1 - Usuário DEMO")
 print("2 - Cadastrar novo usuário")
 print()
@@ -36,4 +38,5 @@ while True:
 
     else:
         print("Opção inválida. Tente novamente.")
-        break
+        login_dados = input("Digite a opção desejada: ")
+        
