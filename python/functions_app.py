@@ -3,7 +3,7 @@ from arrays import produtores, empresas, servicos, instituicoes, projetos, users
 def cadastrar_produtor():
     nome = input("Digite o nome do Produtor: ")
     tipo = input("Digite o tipo do Produtor: ")
-    areaPlantio = float(input("Digite a área de Plantio do Produtor: "))
+    areaPlantio = float(input("Digite a área de Plantio do Produtor em Metros: "))
     nomeFantasia = input("Digite o nome Fantasia do Produtor: ")
     email = input("Digite o email do Produtor: ")
     telefone = input("Digite o telefone do Produtor: ")
@@ -78,7 +78,7 @@ def cadastrar_empresa():
     empresas.append(empresa)
 
     print("Empresa cadastrada com sucesso!")
-    i = input("Você gostaria de cadastrar um serviço? \nDigite 1 para sim \nDigite 2 para não.")
+    i = input("Você gostaria de cadastrar um produto / serviço? \nDigite 1 para sim \nDigite 2 para não.")
 
     if i == '1':
         while True:
@@ -87,10 +87,11 @@ def cadastrar_empresa():
             if servico.lower() == 'sair': 
                 break # encerra o loop
         
-            descricao = input("Digite a descricao do serviço: ")
-    
+            descricao = input("Digite a descricao do produto / serviço: ")
+            preco = input("Digite o preco do produto / serviço: ")
             
-            servicos.append({'codigoEmpresa': codigoEmpresa, 'nome':servico, 'descricao': descricao})
+            
+            servicos.append({'codigoEmpresa': codigoEmpresa, 'nome':servico, 'descricao': descricao, 'preco': preco})
     # exibe a lista de produtos cadastrados
     #print("\nServiços cadastrados:")
     #for servico in servicos:
@@ -121,7 +122,7 @@ def buscar_empresa_por_id(id):
             i = input("Deseja ver a lista de servicos desta empresa? \nDigite 1 para SIM \nDigite 0 para NAO \nOpcao desejada:  ")
             if i == "1":
                 print("=======================================================")
-                print("                        SERVICOS:")
+                print("                   Produto/Serviço:")
                 print("=======================================================")
                 visualizar_servicos(id)
             return empresa
@@ -134,7 +135,7 @@ def visualizar_servicos(id):
     for servico in servicos:
         if servico["codigoEmpresa"] == id:
             print("=======================================================")
-            print("Nome:", servico["nome"], "\nDescrição:", servico["descricao"])
+            print("Nome:", servico["nome"], "\nDescrição:", servico["descricao"], servico["preco"])
             print("=======================================================")
             return servico
         
@@ -173,12 +174,12 @@ def cadastrar_instituicao():
         descricao = input("Digite a descricao do projeto: ")
     
         
-        projetos.append({'Nome': projeto, 'Descrição': descricao})
+        projetos.append({'Nome': projeto, 'Descrição': descricao}, instituicao["nome"])
     
     # exibe a lista de produtos cadastrados
-    print("\nProjetos cadastrados:")
-    for projeto in projetos:
-        print(projeto)
+    #print("\nProjetos cadastrados:")
+    #for projeto in projetos:
+    #    print(projeto)
 
 
 def visualizar_instituicao():
@@ -223,7 +224,7 @@ def login():
                 if modalidade == 'PR':
                     # Rotina de administrador
                     print("======================================")
-                    print('Bem-vindo, Logado como Produtor Rural!')
+                    print('     Login efetuado com sucesso!')
                     print("======================================")
                     print()
                     return True

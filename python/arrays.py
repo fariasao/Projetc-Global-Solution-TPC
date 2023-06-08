@@ -100,6 +100,7 @@ servicos = [
     "codigoEmpresa": 1,
     "nome": "Planta Sempre Saudável",
     "descricao": "A HealthTech é uma empresa de tecnologia que desenvolve soluções para o setor de saúde de plantas",
+    "preco": 1000
     }
 ]
 instituicoes = [
