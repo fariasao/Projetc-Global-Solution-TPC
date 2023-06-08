@@ -212,28 +212,31 @@ def visualizar_projetos_id(id):
     print("Nenhum servico encontrado!")
     return None
     
-def login(usuario, senha, modalidade):
-       
-    for user in users:
-        if user['usuario'] == usuario and user['senha'] == senha and user['tipo'] == modalidade:
-            if modalidade == 'PR':
-                # Rotina de administrador
-                print("======================================")
-                print('Bem-vindo, Logado como Produtor Rural!')
-                print("======================================")
-                print()
-                return True
-            elif modalidade == 'ER':
-                # Rotina do usuário
-                print('Bem-vindo, Logado como Empresa de Tecnologia!')
-                return True
-            elif modalidade == 'IP':
-                # Rotina do usuário
-                print('Bem-vindo, Logado como Empresa de Instituicao de Pesquisa!')
-                return True
+def login():
+    while True:
+        usuario = input("Informe o seu Login: ")
+        senha = input("Informe a sua Senha: ")
+        modalidade = "PR"
+        
+        for user in users:
+            if user['usuario'] == usuario and user['senha'] == senha and user['tipo'] == modalidade:
+                if modalidade == 'PR':
+                    # Rotina de administrador
+                    print("======================================")
+                    print('Bem-vindo, Logado como Produtor Rural!')
+                    print("======================================")
+                    print()
+                    return True
+                elif modalidade == 'ER':
+                    # Rotina do usuário
+                    print('Bem-vindo, Logado como Empresa de Tecnologia!')
+                    return True
+                elif modalidade == 'IP':
+                    # Rotina do usuário
+                    print('Bem-vindo, Logado como Empresa de Instituicao de Pesquisa!')
+                    return True
     
-    print('Login inválido.')
-    return False
+        print('Login inválido.')
 
 def consultar_perfil(codigo):
     for produtor in produtores:

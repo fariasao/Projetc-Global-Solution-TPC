@@ -28,13 +28,10 @@ while True:
 
     elif login_dados == '2':
         cadastrar()
-        l = input("Informe o seu Login: ")
-        s = input("Informe a sua Senha: ")
-        t = "PR"
-        login(l, s, t)
-        cadastrar_empresa()
-        mostrar_menu()
-        break
+        if login() == True:
+            cadastrar_empresa()
+            mostrar_menu()
+        
 
     else:
         print("Opção inválida. Tente novamente.")
